@@ -1,0 +1,11 @@
+﻿<Window x:Class="ValuteCourseApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="357.463" Width="617.537">
+    <Grid Margin="0,0,-8,0">
+        <Button Margin="19,275,466,13" Name="XMLtoDB" Click="XMLtoDB_Click" >Xml->БД</Button>
+        <Button Margin="319,275,147,13" Name="XMLtoGrid" Click="XMLtoGrid_Click">XML->Таблица</Button>
+        <Button Margin="161,275,304,13" Name="DBtoGrid" Click="DBtoGrid_Click">БД->Таблица</Button>
+        <DataGrid Margin="10,10,24,56" Name="ValuteInfGrid"></DataGrid>
+    </Grid>
+</Window>

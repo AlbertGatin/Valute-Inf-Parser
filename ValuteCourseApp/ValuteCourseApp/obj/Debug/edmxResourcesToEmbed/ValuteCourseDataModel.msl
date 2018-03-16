@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CBRINFModelStoreContainer" CdmEntityContainer="CBRINFEntities">
+    <EntitySetMapping Name="ValuteCourses">
+      <EntityTypeMapping TypeName="CBRINFModel.ValuteCourse">
+        <MappingFragment StoreEntitySet="ValuteCourse">
+          <ScalarProperty Name="NumCode" ColumnName="NumCode" />
+          <ScalarProperty Name="CharCode" ColumnName="CharCode" />
+          <ScalarProperty Name="ValuteName" ColumnName="ValuteName" />
+          <ScalarProperty Name="ValuteValue" ColumnName="ValuteValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

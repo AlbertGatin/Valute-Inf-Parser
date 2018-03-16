@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CBRINFModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ValuteCourse">
+          <Key>
+            <PropertyRef Name="NumCode" />
+          </Key>
+          <Property Name="NumCode" Type="int" Nullable="false" />
+          <Property Name="CharCode" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="ValuteName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ValuteValue" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CBRINFModelStoreContainer">
+          <EntitySet Name="ValuteCourse" EntityType="Self.ValuteCourse" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CBRINFModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ValuteCourse">
+          <Key>
+            <PropertyRef Name="NumCode" />
+          </Key>
+          <Property Name="NumCode" Type="Int32" Nullable="false" />
+          <Property Name="CharCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ValuteName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ValuteValue" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CBRINFEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ValuteCourses" EntityType="Self.ValuteCourse" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CBRINFModelStoreContainer" CdmEntityContainer="CBRINFEntities">
+          <EntitySetMapping Name="ValuteCourses">
+            <EntityTypeMapping TypeName="CBRINFModel.ValuteCourse">
+              <MappingFragment StoreEntitySet="ValuteCourse">
+                <ScalarProperty Name="NumCode" ColumnName="NumCode" />
+                <ScalarProperty Name="CharCode" ColumnName="CharCode" />
+                <ScalarProperty Name="ValuteName" ColumnName="ValuteName" />
+                <ScalarProperty Name="ValuteValue" ColumnName="ValuteValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
